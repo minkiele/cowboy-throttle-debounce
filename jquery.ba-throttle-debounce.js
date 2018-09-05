@@ -1,7 +1,8 @@
 /*!
- * jQuery throttle / debounce - v1.1 - 3/7/2010
+ * jQuery throttle / debounce - v1.1.1 - 2018-09-05
  * http://benalman.com/projects/jquery-throttle-debounce-plugin/
- * 
+ *
+ * @license
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
  * http://benalman.com/about/license/
@@ -9,7 +10,7 @@
 
 // Script: jQuery throttle / debounce: Sometimes, less is more!
 //
-// *Version: 1.1, Last updated: 3/7/2010*
+// *Version: 1.1.1, Last updated: 2018-09-05*
 // 
 // Project Home - http://benalman.com/projects/jquery-throttle-debounce-plugin/
 // GitHub       - http://github.com/cowboy/jquery-throttle-debounce/
@@ -63,20 +64,18 @@
 (function(window,undefined){
   '$:nomunge'; // Used by YUI compressor.
   
-  // Since jQuery really isn't required for this plugin, use `jQuery` as the
-  // namespace only if it already exists, otherwise use the `Cowboy` namespace,
-  // creating it if necessary.
-  var $ = window.jQuery || window.Cowboy || ( window.Cowboy = {} ),
+  // use the `Cowboy` namespace, creating it if necessary.
+  var $ = window.Cowboy || ( window.Cowboy = {} ),
     
     // Internal method reference.
     jq_throttle;
   
-  // Method: jQuery.throttle
+  // Method: Cowboy.throttle
   // 
   // Throttle execution of a function. Especially useful for rate limiting
   // execution of handlers on events like resize and scroll. If you want to
   // rate-limit execution of a function to a single time, see the
-  // <jQuery.debounce> method.
+  // <Cowboy.debounce> method.
   // 
   // In this visualization, | is a throttled-function call and X is the actual
   // callback execution:
@@ -91,14 +90,14 @@
   // 
   // Usage:
   // 
-  // > var throttled = jQuery.throttle( delay, [ no_trailing, ] callback );
+  // > var throttled = Cowboy.throttle( delay, [ no_trailing, ] callback );
   // > 
   // > jQuery('selector').bind( 'someevent', throttled );
   // > jQuery('selector').unbind( 'someevent', throttled );
   // 
   // This also works in jQuery 1.4+:
   // 
-  // > jQuery('selector').bind( 'someevent', jQuery.throttle( delay, [ no_trailing, ] callback ) );
+  // > jQuery('selector').bind( 'someevent', Cowboy.throttle( delay, [ no_trailing, ] callback ) );
   // > jQuery('selector').unbind( 'someevent', callback );
   // 
   // Arguments:
@@ -194,12 +193,12 @@
     return wrapper;
   };
   
-  // Method: jQuery.debounce
+  // Method: Cowboy.debounce
   // 
   // Debounce execution of a function. Debouncing, unlike throttling,
   // guarantees that a function is only executed a single time, either at the
   // very beginning of a series of calls, or at the very end. If you want to
-  // simply rate-limit execution of a function, see the <jQuery.throttle>
+  // simply rate-limit execution of a function, see the <Cowboy.throttle>
   // method.
   // 
   // In this visualization, | is a debounced-function call and X is the actual
@@ -215,14 +214,14 @@
   // 
   // Usage:
   // 
-  // > var debounced = jQuery.debounce( delay, [ at_begin, ] callback );
+  // > var debounced = Cowboy.debounce( delay, [ at_begin, ] callback );
   // > 
   // > jQuery('selector').bind( 'someevent', debounced );
   // > jQuery('selector').unbind( 'someevent', debounced );
   // 
   // This also works in jQuery 1.4+:
   // 
-  // > jQuery('selector').bind( 'someevent', jQuery.debounce( delay, [ at_begin, ] callback ) );
+  // > jQuery('selector').bind( 'someevent', Cowboy.debounce( delay, [ at_begin, ] callback ) );
   // > jQuery('selector').unbind( 'someevent', callback );
   // 
   // Arguments:

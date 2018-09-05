@@ -1,0 +1,32 @@
+{
+  "name": "cowboy-throttle-debounce",
+  "version": "1.1.1",
+  "description": "Version of Cowboy's jquery throttle debounce which won't use jQuery namespace but \"Cowboy\" instead. This is the missing variant of this library.",
+  "main": "jquery.ba-throttle-debounce.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "minify": "node_modules/.bin/uglifyjs --comments -cmo jquery.ba-throttle-debounce.min.js jquery.ba-throttle-debounce.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minkiele/cowboy-throttle-debounce.git"
+  },
+  "keywords": [
+    "Cowboy",
+    "Throttle",
+    "Debounce",
+    "NPM"
+  ],
+  "author": "Ben Alman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minkiele/cowboy-throttle-debounce/issues"
+  },
+  "homepage": "https://github.com/minkiele/cowboy-throttle-debounce#readme",
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}
